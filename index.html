@@ -1,127 +1,870 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>China Mart — Smart Shopping</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-  <div class="topbar">Unlock Bigger Savings with Every Purchase!</div>
+/* =========================================
+   SAIF CHINA MART — PROFESSIONAL CSS
+   ========================================= */
 
-  <header class="header">
-    <button class="icon-btn" id="menuBtn" aria-label="Open menu">☰</button>
-    <button class="icon-btn" id="searchBtn" aria-label="Search">⌕</button>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
-    <a class="logo" href="#" aria-label="Saif China Mart home">
-      <img src="china-mart-logo.jpg" alt="Saif China Mart logo" class="brand-logo-img">
-    </a>
+html {
+    scroll-behavior: smooth;
+}
 
-    <div class="header-actions">
-      <button class="icon-btn desktop-search" id="searchBtn2" aria-label="Search">⌕</button>
-      <button class="icon-btn" id="accountBtn" aria-label="Account">♙</button>
-      <button class="icon-btn cart-btn" id="cartBtn" aria-label="Cart">🛍<span id="cartCount">0</span></button>
-    </div>
-  </header>
+body {
+    font-family: "DM Sans", Arial, sans-serif;
+    background: #faf9f6;
+    color: #222;
+    line-height: 1.6;
+}
 
-  <nav class="nav" id="nav">
-    <a href="#home">Home</a>
-    <a href="#categories">Categories</a>
-    <a href="#products">Products</a>
-    <a href="#deals">Deals</a>
-    <a href="#contact">Contact</a>
-  </nav>
+/* =========================================
+   TOP BAR
+   ========================================= */
 
-  <main>
-    <section class="hero" id="home">
-      <div class="hero-copy">
-        <p class="eyebrow">SMART FINDS • EVERYDAY VALUE</p>
-        <h1>Everything You Need.<br><em>Better Prices.</em></h1>
-        <p>Discover useful products for your home, lifestyle and everyday needs — all in one place.</p>
-        <a class="btn" href="#products">SHOP NOW</a>
-      </div>
-      <div class="hero-art">
-        <div class="product-orb orb1"></div>
-        <div class="product-orb orb2"></div>
-        <div class="hero-card card1">KITCHEN<br><strong>ESSENTIALS</strong></div>
-        <div class="hero-card card2">HOME<br><strong>ORGANIZERS</strong></div>
-        <div class="hero-card card3">SMART<br><strong>GADGETS</strong></div>
-      </div>
-    </section>
+.topbar {
+    background: #252323;
+    color: #fff;
+    text-align: center;
+    padding: 9px 15px;
+    font-size: 12px;
+    letter-spacing: 0.5px;
+}
 
-    <section class="trust">
-      <div><span>🚚</span><strong>NATIONWIDE DELIVERY</strong><small>Fast delivery across Pakistan</small></div>
-      <div><span>✓</span><strong>COD AVAILABLE</strong><small>Pay on delivery</small></div>
-      <div><span>↻</span><strong>EASY SHOPPING</strong><small>Simple & secure ordering</small></div>
-    </section>
+/* =========================================
+   HEADER
+   ========================================= */
 
-    <section class="section" id="categories">
-      <div class="section-head">
-        <div><p class="eyebrow">SHOP BY</p><h2>Categories</h2></div>
-      </div>
-      <div class="categories">
-        <a href="#products" class="category"><span>🏠</span><b>Home & Living</b><small>Smart home essentials</small></a>
-        <a href="#products" class="category"><span>🍳</span><b>Kitchen</b><small>Useful kitchen tools</small></a>
-        <a href="#products" class="category"><span>📱</span><b>Gadgets</b><small>Everyday tech finds</small></a>
-        <a href="#products" class="category"><span>✨</span><b>Beauty & Care</b><small>Personal essentials</small></a>
-      </div>
-    </section>
+.header {
+    min-height: 90px;
+    background: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 6%;
+    border-bottom: 1px solid #eee;
+    position: relative;
+    z-index: 1000;
+}
 
-    <section class="section" id="products">
-      <div class="section-head">
-        <div><p class="eyebrow">CUSTOMER FAVOURITES</p><h2>Best Sellers</h2></div>
-        <button class="text-btn" id="viewAll">View All →</button>
-      </div>
-      <div class="products" id="productGrid"></div>
-    </section>
+.icon-btn {
+    border: 0;
+    background: transparent;
+    cursor: pointer;
+    font-size: 22px;
+    color: #222;
+    padding: 8px;
+    transition: 0.3s;
+}
 
-    <section class="deal" id="deals">
-      <div>
-        <p class="eyebrow">LIMITED-TIME OFFER</p>
-        <h2>Smart deals.<br>Better shopping.</h2>
-        <p>Save more when you shop your everyday essentials together.</p>
-        <a class="btn dark" href="#products">EXPLORE DEALS</a>
-      </div>
-      <div class="deal-badge">UP TO<br><strong>30%</strong><br>OFF</div>
-    </section>
+.icon-btn:hover {
+    opacity: 0.6;
+}
 
-    <section class="section about">
-      <div>
-        <p class="eyebrow">ABOUT CHINA MART</p>
-        <h2>Simple shopping,<br>honest value.</h2>
-      </div>
-      <p>China Mart brings useful home, kitchen, beauty, storage and everyday products together in one simple shopping experience. Order easily through WhatsApp with Cash on Delivery available across Pakistan.</p>
-    </section>
-  </main>
+.logo {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    text-decoration: none;
+}
 
-  <footer id="contact">
-    <div class="footer-brand"><span class="logo-mark">CM</span><h3>China Mart</h3><p>Smart Shopping • Better Value</p></div>
-    <div><h4>Quick Links</h4><a href="#home">Home</a><a href="#products">Products</a><a href="#categories">Categories</a></div>
-    <div><h4>Customer Care</h4><a href="#">WhatsApp Order</a><a href="#">Delivery Info</a><a href="#">Return Policy</a></div>
-    <div><h4>Contact</h4><p>Pakistan</p><p>WhatsApp: +92 335 7654140</p></div>
-    <div class="copyright">© 2026 China Mart. All rights reserved.</div>
-  </footer>
+.brand-logo-img {
+    width: 85px;
+    height: auto;
+    display: block;
+    object-fit: contain;
+}
 
-  <button class="whatsapp" id="whatsapp" aria-label="WhatsApp">◔</button>
+.header-actions {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
 
-  <div class="overlay" id="overlay"></div>
-  <aside class="drawer" id="drawer">
-    <button class="close" id="closeDrawer">×</button>
-    <div class="drawer-logo">CM <b>China Mart</b></div>
-    <a href="#home">Home</a><a href="#categories">Categories</a><a href="#products">Products</a><a href="#deals">Deals</a><a href="#contact">Contact</a>
-  </aside>
+.cart-btn {
+    position: relative;
+}
 
-  <div class="modal" id="searchModal">
-    <button class="close" id="closeSearch">×</button>
-    <h3>Search China Mart</h3>
-    <input id="searchInput" placeholder="Search products..." autofocus>
-    <div id="searchResults"></div>
-  </div>
+#cartCount {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background: #222;
+    color: #fff;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    font-size: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 
-  <div class="toast" id="toast">Added to cart ✓</div>
-  <script src="script.js"></script>
-</body>
-</html>
+/* =========================================
+   NAVIGATION
+   ========================================= */
+
+.nav {
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 38px;
+    padding: 12px 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.nav a {
+    color: #333;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+
+.nav a:hover {
+    color: #9b5c48;
+}
+
+/* =========================================
+   HERO
+   ========================================= */
+
+.hero {
+    min-height: 500px;
+    padding: 80px 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    background: #f3eee7;
+    overflow: hidden;
+}
+
+.hero-copy {
+    width: 50%;
+    max-width: 600px;
+}
+
+.eyebrow {
+    font-size: 12px;
+    letter-spacing: 3px;
+    font-weight: 600;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+.hero h1 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: clamp(45px, 5vw, 72px);
+    line-height: 0.98;
+    font-weight: 600;
+    margin-bottom: 25px;
+    color: #242121;
+}
+
+.hero h1 br {
+    display: block;
+}
+
+.hero p {
+    color: #666;
+    max-width: 520px;
+    font-size: 15px;
+    margin-bottom: 30px;
+}
+
+.btn {
+    display: inline-block;
+    background: #252323;
+    color: #fff;
+    text-decoration: none;
+    border: none;
+    padding: 14px 28px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 1px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #9b5c48;
+    transform: translateY(-2px);
+}
+
+.btn.dark {
+    background: #252323;
+}
+
+.hero-art {
+    width: 45%;
+    min-height: 350px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-orb {
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: #d7c5a9;
+    position: absolute;
+}
+
+.product-orb.orb2 {
+    width: 210px;
+    height: 210px;
+    background: #eee;
+    left: 10%;
+    top: 22%;
+}
+
+.hero-card {
+    position: absolute;
+    padding: 12px 18px;
+    background: #292522;
+    color: #fff;
+    font-size: 10px;
+    letter-spacing: 1px;
+    text-align: center;
+}
+
+.hero-card.card1 {
+    right: 0;
+    top: 18%;
+}
+
+.hero-card.card2 {
+    left: 12%;
+    top: 40%;
+    background: #fff;
+    color: #333;
+}
+
+.hero-card.card3 {
+    right: 18%;
+    bottom: 18%;
+}
+
+/* =========================================
+   TRUST
+   ========================================= */
+
+.trust {
+    background: #fff;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    padding: 25px 7%;
+    border-bottom: 1px solid #eee;
+}
+
+.trust > div {
+    text-align: center;
+    padding: 10px 20px;
+    border-right: 1px solid #eee;
+}
+
+.trust > div:last-child {
+    border-right: none;
+}
+
+.trust span {
+    margin-right: 7px;
+}
+
+.trust strong {
+    font-size: 12px;
+    display: inline-block;
+    margin-right: 5px;
+}
+
+.trust small {
+    color: #777;
+    font-size: 11px;
+}
+
+/* =========================================
+   GENERAL SECTIONS
+   ========================================= */
+
+.section {
+    padding: 75px 7%;
+}
+
+.section-head {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 35px;
+}
+
+.section-head h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 38px;
+    font-weight: 500;
+}
+
+.section-head .eyebrow {
+    margin-bottom: 5px;
+}
+
+.text-btn {
+    border: none;
+    background: transparent;
+    text-decoration: underline;
+    cursor: pointer;
+    font-size: 13px;
+    color: #333;
+}
+
+/* =========================================
+   CATEGORIES
+   ========================================= */
+
+.categories {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.category {
+    text-decoration: none;
+    color: #222;
+    background: #f1eee9;
+    min-height: 170px;
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    transition: 0.3s;
+}
+
+.category:hover {
+    transform: translateY(-5px);
+    background: #e8dfd3;
+}
+
+.category span {
+    font-size: 30px;
+    margin-bottom: auto;
+}
+
+.category b {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.category small {
+    color: #777;
+    font-size: 11px;
+}
+
+/* =========================================
+   PRODUCTS
+   ========================================= */
+
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 22px;
+}
+
+.product-card {
+    background: #fff;
+    border: 1px solid #eee;
+    overflow: hidden;
+    transition: 0.3s;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+}
+
+.product-card img {
+    width: 100%;
+    height: 230px;
+    object-fit: cover;
+    display: block;
+}
+
+.product-info {
+    padding: 18px;
+}
+
+.product-info h3 {
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.product-info p {
+    color: #777;
+    font-size: 12px;
+    margin-bottom: 10px;
+}
+
+.product-price {
+    font-weight: 700;
+    font-size: 15px;
+}
+
+/* =========================================
+   DEAL SECTION
+   ========================================= */
+
+.deal {
+    margin: 30px 7%;
+    padding: 60px;
+    background: #292522;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.deal .eyebrow {
+    color: #bbb;
+}
+
+.deal h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 40px;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+
+.deal p {
+    color: #ccc;
+    margin-bottom: 25px;
+}
+
+.deal .btn {
+    background: #fff;
+    color: #222;
+}
+
+.deal .btn:hover {
+    background: #d7c5a9;
+}
+
+.deal-badge {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 1px solid #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    font-size: 11px;
+    letter-spacing: 1px;
+    line-height: 1.5;
+}
+
+.deal-badge strong {
+    font-size: 25px;
+}
+
+/* =========================================
+   ABOUT
+   ========================================= */
+
+.about {
+    background: #fff;
+    display: flex;
+    justify-content: space-between;
+    gap: 60px;
+}
+
+.about > div {
+    max-width: 650px;
+}
+
+.about h2 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 40px;
+    line-height: 1.1;
+}
+
+.about > p {
+    max-width: 650px;
+    color: #666;
+}
+
+/* =========================================
+   FOOTER
+   ========================================= */
+
+footer {
+    background: #242222;
+    color: #fff;
+    padding: 55px 7% 25px;
+}
+
+.footer-brand {
+    display: grid;
+    grid-template-columns: 1.4fr 1fr 1fr;
+    gap: 50px;
+    margin-bottom: 35px;
+}
+
+.footer-brand h3 {
+    font-family: "Playfair Display", Georgia, serif;
+    font-size: 25px;
+    margin-bottom: 8px;
+}
+
+.footer-brand h4 {
+    font-size: 13px;
+    margin-bottom: 12px;
+}
+
+.footer-brand p {
+    color: #aaa;
+    font-size: 12px;
+}
+
+.footer-brand a {
+    color: #aaa;
+    text-decoration: none;
+    font-size: 12px;
+    margin-right: 15px;
+}
+
+.footer-brand a:hover {
+    color: #fff;
+}
+
+.copyright {
+    border-top: 1px solid #444;
+    padding-top: 20px;
+    color: #888;
+    font-size: 11px;
+}
+
+/* =========================================
+   WHATSAPP BUTTON
+   ========================================= */
+
+.whatsapp {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 52px;
+    height: 52px;
+    border-radius: 50%;
+    border: none;
+    background: #168c45;
+    color: #fff;
+    cursor: pointer;
+    z-index: 2000;
+    font-size: 22px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+}
+
+/* =========================================
+   DRAWER / MENU
+   ========================================= */
+
+.overlay {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,0.45);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s;
+    z-index: 3000;
+}
+
+.drawer {
+    position: fixed;
+    left: -330px;
+    top: 0;
+    width: 320px;
+    height: 100vh;
+    background: #fff;
+    padding: 25px;
+    z-index: 4000;
+    transition: 0.35s;
+    box-shadow: 5px 0 25px rgba(0,0,0,0.15);
+}
+
+.drawer.active {
+    left: 0;
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.close {
+    border: none;
+    background: transparent;
+    font-size: 25px;
+    cursor: pointer;
+    float: right;
+}
+
+.drawer-logo {
+    margin: 50px 0 25px;
+    font-size: 22px;
+    font-weight: 700;
+}
+
+.drawer a {
+    display: block;
+    padding: 12px 0;
+    color: #333;
+    text-decoration: none;
+    border-bottom: 1px solid #eee;
+}
+
+/* =========================================
+   SEARCH
+   ========================================= */
+
+#searchBox {
+    display: none;
+}
+
+.search-input {
+    width: 100%;
+    padding: 13px;
+    border: 1px solid #ddd;
+    outline: none;
+}
+
+/* =========================================
+   RESPONSIVE — TABLET
+   ========================================= */
+
+@media (max-width: 992px) {
+
+    .hero {
+        padding: 65px 5%;
+    }
+
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .categories {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .hero h1 {
+        font-size: 50px;
+    }
+
+    .hero-art {
+        min-height: 300px;
+    }
+}
+
+/* =========================================
+   RESPONSIVE — MOBILE
+   ========================================= */
+
+@media (max-width: 700px) {
+
+    .topbar {
+        font-size: 10px;
+    }
+
+    .header {
+        min-height: 70px;
+        padding: 0 15px;
+    }
+
+    .brand-logo-img {
+        width: 72px;
+    }
+
+    .header-actions {
+        gap: 0;
+    }
+
+    .desktop-search {
+        display: none;
+    }
+
+    .nav {
+        gap: 15px;
+        overflow-x: auto;
+        justify-content: flex-start;
+        padding: 10px 15px;
+    }
+
+    .nav a {
+        white-space: nowrap;
+        font-size: 11px;
+    }
+
+    .hero {
+        min-height: auto;
+        padding: 55px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .hero-copy {
+        width: 100%;
+    }
+
+    .hero h1 {
+        font-size: 43px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .hero-art {
+        width: 100%;
+        min-height: 280px;
+    }
+
+    .product-orb {
+        width: 230px;
+        height: 230px;
+    }
+
+    .product-orb.orb2 {
+        width: 150px;
+        height: 150px;
+    }
+
+    .trust {
+        grid-template-columns: 1fr;
+        padding: 15px;
+    }
+
+    .trust > div {
+        border-right: none;
+        border-bottom: 1px solid #eee;
+        padding: 13px;
+    }
+
+    .trust > div:last-child {
+        border-bottom: none;
+    }
+
+    .section {
+        padding: 55px 20px;
+    }
+
+    .section-head {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .section-head h2 {
+        font-size: 32px;
+    }
+
+    .categories {
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+
+    .category {
+        min-height: 150px;
+        padding: 18px;
+    }
+
+    .products {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .product-card img {
+        height: 170px;
+    }
+
+    .product-info {
+        padding: 12px;
+    }
+
+    .product-info h3 {
+        font-size: 13px;
+    }
+
+    .deal {
+        margin: 15px 20px;
+        padding: 40px 25px;
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .deal h2 {
+        font-size: 32px;
+    }
+
+    .deal-badge {
+        width: 90px;
+        height: 90px;
+    }
+
+    .about {
+        flex-direction: column;
+        padding: 55px 20px;
+    }
+
+    .about h2 {
+        font-size: 32px;
+    }
+
+    .footer-brand {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+
+    footer {
+        padding: 45px 20px 20px;
+    }
+
+    .whatsapp {
+        right: 18px;
+        bottom: 18px;
+        width: 48px;
+        height: 48px;
+    }
+}
+
+/* =========================================
+   SMALL MOBILE
+   ========================================= */
+
+@media (max-width: 420px) {
+
+    .hero h1 {
+        font-size: 36px;
+    }
+
+    .categories,
+    .products {
+        grid-template-columns: 1fr;
+    }
+
+    .product-card img {
+        height: 220px;
+    }
+
+    .hero-card.card1 {
+        right: 0;
+    }
+
+    .hero-card.card2 {
+        left: 0;
+    }
+
+    .hero-card.card3 {
+        right: 5%;
+    }
+}
